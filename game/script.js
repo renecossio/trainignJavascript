@@ -90,12 +90,11 @@ function update() {
         enemy.y += enemy.speedY;
     }
 
-    enemy.collidedWith(topWall, function (obj) {        
+    enemy.collidedWith(topWall, function (obj) {
         sw = false;
     })
 
-    enemy.collidedWith(bottomWall, function (obj) {
-        // console.log(obj);
+    enemy.collidedWith(bottomWall, function (obj) {        
         sw = true;
     })
 
@@ -105,16 +104,11 @@ function update() {
         alert("GAME OVER");
     })
 
-
     if (projectile.x + projectile.width > gameScene.canvas.width) {
         projectile.x = 0
     } else {
         projectile.x += projectile.speedX;
     }
-
-
-
-
 
     gameScene.refresh();
 }
