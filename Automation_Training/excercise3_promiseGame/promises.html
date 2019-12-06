@@ -1,0 +1,103 @@
+<button id="create-tank" >Create Tank</button>
+    <button id="create-infantry" >Create Infantry</button>
+    <button id="create-plane" >Create Plane</button>
+    <script>
+        document.getElementById("create-tank").addEventListener("click", function(){
+            // CREATE WTH CALLBACK
+            createUnitWithCallBack("tank", 5000, (res) => {
+                console.log(`%c${res}`, "color: green")
+            })
+
+    // CREATE UNIT WITH PROMISE
+    createUnitWithPromise("siege tank", 6000).then(function(res){
+            console.log(`%c${res} WITH PROMISES`, "color: blue")
+        }).catch(function(err){
+            console.log(`%c${err} ERROR WITH PROMISES`, "color: red")
+        })
+    })
+    
+document.getElementById("create-infantry").addEventListener("click", function(){
+            createUnitWithCallBack("infantry", 1000, (res) => {
+                console.log(`%c${res}`, "color: green")
+            })
+        })
+        
+document.getElementById("create-plane").addEventListener("click", function(){
+            createUnitWithCallBack("plane", 3000, (res) => {
+                console.log(`%c${res}`, "color: green")
+            })
+        })
+        
+function createUnitWithCallBack(unit, time, callback){
+            console.log(`Creating ${unit}...`)
+    setTimeout(function(){
+            callback(`${unit} created`);
+    }, time)
+}
+
+let errortank = false;
+
+function createUnitWithPromise(unit, time){
+            console.log(`Creating ${unit}...`)
+    return new Promise(function (response, reject){
+            setTimeout(function () {
+                if (errortank) {
+                    reject(`${unit} created`);
+                } else {
+                    response(`${unit} created`);
+                }
+            }, time)
+        })
+    }
+    
+    
+    
+    /*
+    
+    //PROMISE ALL
+    
+    let done = true
+    let done2 = true
+    
+const isItDoneYet = new Promise((resolve, reject) => {
+  if (done) {
+    const workDone = 'Here is the thing I built'
+        resolve(workDone)
+  } else {
+    const why = 'Still working on something else'
+        reject(why)
+      }
+    })
+    
+const isItDoneYet2 = new Promise((resolve, reject) => {
+  if (done2) {
+    const workDone = 'Here is the thing I built 2'
+        resolve(workDone)
+  } else {
+    const why = 'Still working on something else 2'
+        reject(why)
+      }
+    })
+    
+    Promise.all([isItDoneYet, isItDoneYet2])
+  .then(res => {
+            console.log('Array of results', res)
+        })
+  .catch(err => {
+            console.error(err)
+        })
+      
+      
+      //PROMISE RACE
+const first = new Promise((resolve, reject) => {
+            setTimeout(resolve, 5000, 'first')
+        })
+const second = new Promise((resolve, reject) => {
+            setTimeout(resolve, 2000, 'second')
+        })
+        
+Promise.race([first, second]).then(result => {
+            console.log(result) // second
+        })
+        */
+</script>
