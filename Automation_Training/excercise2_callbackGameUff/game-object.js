@@ -1,3 +1,4 @@
+
 function gameObject(obj) {
     var gameObj = {
         x: obj.x,
@@ -15,7 +16,6 @@ function gameObject(obj) {
 
         collidedWith: function (gameObjToBeCollided, callback) {
 
-
             if ((gameObj.x + gameObj.width) > gameObjToBeCollided.x &&
                 gameObj.x < gameObjToBeCollided.x + gameObjToBeCollided.width &&
                 (gameObj.y + gameObj.height) > gameObjToBeCollided.y &&
@@ -23,15 +23,7 @@ function gameObject(obj) {
 
                 callback(gameObjToBeCollided);
             }
-
-
         }
-
-        // si hay intyerseccion mandar el callback, mandar el call back como parametro de la function
-        // Hay intersección entre el gameObj y gameObjToBeCollided
-
-        //implements
-
     }
     return gameObj;
 }

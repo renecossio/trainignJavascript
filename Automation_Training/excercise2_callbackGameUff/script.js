@@ -82,6 +82,7 @@ function start() {
 
 /* Update every 10 miliseconds. */
 var sw = true;
+
 function update() {
     /* Enemy behaviour */
     if (sw) {
@@ -111,6 +112,13 @@ function update() {
     }
 
     gameScene.refresh();
+
+
+    
 }
+
+
+
+
 
 start()
