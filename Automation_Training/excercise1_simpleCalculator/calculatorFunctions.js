@@ -26,7 +26,7 @@ function divide(dividend, divisor) {
 }
 
 function multiplication(firstFactor, secondFactor) {
-    var result = firstNunmber * secondFactor;
+    var result = firstFactor * secondFactor;
 }
 
 function isNumeric(num) {
