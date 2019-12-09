@@ -30,13 +30,9 @@ console.log("The result of the adition is      " +
 
 console.log("The result of the substraction is " +
     calculator.substraction(99, 80));
-try {
-    console.log("The result of the divide is       " +
-    calculator.divide(55, 0));
-} catch (error) {
-    console.log(error);
-}
 
+console.log("The result of the divide is       " +
+    calculator.divide(100, 0));
 
 console.log("The result of the multiplication is " +
     calculator.multiplication(2, 10));

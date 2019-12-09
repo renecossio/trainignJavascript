@@ -16,17 +16,15 @@ function substraction(firstNunmber, secondNumber) {
 }
 
 function divide(dividend, divisor) {
-    try {
-        if (divisor != 0)
-            var result = dividend / divisor;
-    } catch (error) {
-        console.error(error);
-        console.error("divide by zero");
+    if (divisor != 0) {
+        return result = dividend / divisor;
+    } else {
+        return ("divide by zero");
     }
 }
 
 function multiplication(firstFactor, secondFactor) {
-    var result = firstFactor * secondFactor;
+    return result = firstFactor * secondFactor;
 }
 
 function isNumeric(num) {
