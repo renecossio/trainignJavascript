@@ -25,14 +25,15 @@ var rl = require("readline-sync");
 //     process.exit(0);
 // });
 
-console.log("The result of the adition is      " +
-    calculator.addition(2, 10));
+calculator.addition(22, 33)
+    .then(response => console.log("The result of the adition is      " + response));
 
-console.log("The result of the substraction is " +
-    calculator.substraction(99, 80));
+calculator.substraction(99, 80)
+    .then(response => console.log("The result of the substraction is " + response));
 
-console.log("The result of the divide is       " +
-    calculator.divide(100, 0));
+calculator.divide(100, 0)
+    .then(response => console.log("The result of the divide is       " + response))
+    .catch(error => console.log(error));
 
-console.log("The result of the multiplication is " +
-    calculator.multiplication(2, 10));
+calculator.multiplication(10, 12)
+    .then(response => console.log("The result of the multiplication is " + response));
