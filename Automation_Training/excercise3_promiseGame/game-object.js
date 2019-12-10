@@ -1,4 +1,3 @@
-
 function gameObject(obj) {
     var gameObj = {
         x: obj.x,
@@ -15,12 +14,13 @@ function gameObject(obj) {
         },
 
         collidedWith: function (gameObjToBeCollided) {
-            return new Promise(function (response, reject) {
+            return new Promise(function (resolve, reject) {
                 if ((gameObj.x + gameObj.width) > gameObjToBeCollided.x &&
                     gameObj.x < gameObjToBeCollided.x + gameObjToBeCollided.width &&
                     (gameObj.y + gameObj.height) > gameObjToBeCollided.y &&
                     gameObj.y < gameObjToBeCollided.y + gameObjToBeCollided.height) {
-                    response(gameObjToBeCollided);
+
+                    resolve(gameObjToBeCollided);
                 }
             });
         }

@@ -1,21 +1,21 @@
 
-function addition(firstNunmber, secondNumber) {
+async function addition(firstNunmber, secondNumber) {
     var result = firstNunmber + secondNumber;
     return result;
 }
 
-function substraction(firstNunmber, secondNumber) {
+async function substraction(firstNunmber, secondNumber) {
     try {
         if (firstNunmber > secondNumber) {
             var result = firstNunmber - secondNumber;
         }
-        return result;
     } catch (error) {
-        console.error(error);
+        result = error;
     }
+    return result;
 }
 
-function divide(dividend, divisor) {
+async function divide(dividend, divisor) {
     if (divisor != 0) {
         return result = dividend / divisor;
     } else {
@@ -23,11 +23,11 @@ function divide(dividend, divisor) {
     }
 }
 
-function multiplication(firstFactor, secondFactor) {
+async function multiplication(firstFactor, secondFactor) {
     return result = firstFactor * secondFactor;
 }
 
-function isNumeric(num) {
+async function isNumeric(num) {
     return !isNaN(num)
 }
 

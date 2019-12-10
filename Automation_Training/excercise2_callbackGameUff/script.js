@@ -112,13 +112,7 @@ function update() {
     }
 
     gameScene.refresh();
-
-
     
 }
-
-
-
-
-
+    
 start()

@@ -89,15 +89,15 @@ const isItDoneYet2 = new Promise((resolve, reject) => {
       
       
       //PROMISE RACE
-const first = new Promise((resolve, reject) => {
-            setTimeout(resolve, 5000, 'first')
-        })
-const second = new Promise((resolve, reject) => {
-            setTimeout(resolve, 2000, 'second')
-        })
-        
-Promise.race([first, second]).then(result => {
-            console.log(result) // second
-        })
+    const first = new Promise((resolve, reject) => {
+                setTimeout(resolve, 5000, 'first')
+            })
+    const second = new Promise((resolve, reject) => {
+                setTimeout(resolve, 2000, 'second')
+            })
+            
+    Promise.race([first, second]).then(result => {
+                console.log(result) // second
+            })
         */
 </script>
